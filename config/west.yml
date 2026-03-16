@@ -7,7 +7,6 @@ manifest:
         # support nice_oled and nice_epaper
     - name: mctechnology17
       url-base: https://github.com/mctechnology17
-
     # - name: m165437
     #   url-base: https://github.com/M165437
     # Additional modules containing boards/shields/custom code can be listed here as well
@@ -19,9 +18,9 @@ manifest:
     # - name: nice-view-gem
     #   remote: m165437
     #   revision: v0.3.0
-      # support nice_oled and nice_epaper
+    # support nice_oled and nice_epaper
     - name: zmk-nice-oled
       remote: mctechnology17
       revision: main
- self:
+self:
     path: config
