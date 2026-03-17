@@ -34,6 +34,16 @@
             flavor = "balanced";
             bindings = <&kp>, <&kp>;
         };
+
+        rlt: repeat_layer_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+            bindings = <&mo>, <&kp>;
+        };
+
     };
 
     keymap {
@@ -46,13 +56,13 @@
             display-name = "DEFAULT";
             bindings = <
  // ╭──────────────────┬──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮   ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
-      &lt MEDIA DEL      &kp Q          &kp W          &kp E          &kp R          &kp T              &kp Y          &kp U          &kp I          &kp O          &kp P          &kp BSPC
+      &rlt MEDIA DEL     &kp Q          &kp W          &kp E          &kp R          &kp T              &kp Y          &kp U          &kp I          &kp O          &kp P          &kp BSPC
  // ├──────────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
-      &hm LGUI TAB       &hm LSHFT A    &kp S          &kp D          &lt ARROW F    &kp G              &kp H          &kp J          &kp K          &kp L          &hm RSHFT SEMI &hm LGUI SQT
+      &hm LGUI TAB       &hm LSHFT A    &kp S          &kp D          &rlt ARROW F   &kp G              &kp H          &kp J          &kp K          &kp L          &hm RSHFT SEMI &hm LGUI SQT
  // ├──────────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
-      &sc_lspo LSHFT LPAR &hm LCTRL Z   &hm LALT X     &kp C          &lt MOUSE V    &kp B              &kp N          &kp M          &kp COMMA      &hm RALT DOT   &hm RCTRL FSLH &sc_lspo RSHFT RPAR
+      &sc_lspo LSHFT LPAR &hm LCTRL Z   &hm LALT X     &kp C          &rlt MOUSE V   &kp B              &kp N          &kp M          &kp COMMA      &hm RALT DOT   &hm RCTRL FSLH &sc_lspo RSHFT RPAR
  // ╰──────────────────┴──────────────┴──────────────┼──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┼──────────────┴──────────────┴──────────────╯
-                                                       &hm LCTRL ESC  &lt NUM DEL    &lt SYMB SPACE     &lt SYMB BSPC  &hm LS(LGUI) RET &lt ADJUST ESC
+                                                       &hm LCTRL ESC  &rlt NUM DEL   &rlt SYMB SPACE    &rlt SYMB BSPC &hm LS(LGUI) RET &rlt ADJUST ESC
  //                                                  ╰──────────────┴──────────────┴──────────────╯   ╰──────────────┴──────────────┴──────────────╯
             >;
         };
